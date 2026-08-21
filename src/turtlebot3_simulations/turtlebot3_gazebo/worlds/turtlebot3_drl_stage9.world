@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"></plugin>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"></plugin>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"></plugin>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+
+    <scene>
+      <shadows>false</shadows>
+      <ambient>0.6 0.6 0.6 1</ambient>
+      <background>0.8 0.8 0.8 1</background>
+    </scene>
+
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+    <!-- Stage 9 -->
+    <include>
+      <uri>model://turtlebot3_drl_world/outer_walls</uri>
+      <static>true</static>
+    </include>
+
+    <include>
+      <uri>model://turtlebot3_drl_world/inner_walls</uri>
+      <static>true</static>
+    </include>
+
+    <model name="drl_obstacle1">
+      <pose>2.0 2.0 0 0 0 0</pose>
+      <include>
+        <uri>model://turtlebot3_drl_world/obstacle</uri>
+      </include>
+    </model>
+
+    <model name="drl_obstacle2">
+      <pose>-2.0 -2.0 0 0 0 0</pose>
+      <include>
+        <uri>model://turtlebot3_drl_world/obstacle</uri>
+      </include>
+    </model>
+
+    <model name="drl_obstacle3">
+      <pose>1.5 -1.0 0 0 0 0</pose>
+      <include>
+        <uri>model://turtlebot3_drl_world/obstacle</uri>
+      </include>
+    </model>
+
+    <model name="drl_obstacle4">
+      <pose>-1.0 1.5 0 0 0 0</pose>
+      <include>
+        <uri>model://turtlebot3_drl_world/obstacle</uri>
+      </include>
+    </model>
+
+    <model name="drl_obstacle5">
+      <pose>0.5 -1.8 0 0 0 0</pose>
+      <include>
+        <uri>model://turtlebot3_drl_world/obstacle</uri>
+      </include>
+    </model>
+
+    <model name="drl_obstacle6">
+      <pose>-1.5 -0.5 0 0 0 0</pose>
+      <include>
+        <uri>model://turtlebot3_drl_world/obstacle</uri>
+      </include>
+    </model>
+
+  </world>
+</sdf>
