@@ -1,0 +1,7 @@
+# Request
+float32 pose_x
+float32 pose_y
+---
+# Response  
+bool new_goal
+bool success

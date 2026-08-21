@@ -1,0 +1,6 @@
+# Request: robot pose and difficulty radius
+float32 robot_pose_x
+float32 robot_pose_y
+float32 radius
+---
+# Response: empty (goal spawning is handled asynchronously)

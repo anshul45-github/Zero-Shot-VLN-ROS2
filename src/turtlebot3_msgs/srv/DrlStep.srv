@@ -1,0 +1,10 @@
+# Request: action taken by the agent
+float32[] action
+float32[] previous_action
+---
+# Response: next state, reward, done flag
+float32[] state
+float32 reward
+bool done
+int32 success
+float32 distance_traveled
